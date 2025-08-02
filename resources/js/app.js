@@ -32,4 +32,66 @@ document.addEventListener('DOMContentLoaded', function() {
 
         }, 1500); // Ganti kata setiap 3 detik
     }
+
+    
+});
+
+import AOS from 'aos';
+
+import { initCounterAnimation } from './counter.js';
+
+import Swiper from 'swiper';
+import { Autoplay } from 'swiper/modules';
+
+// Fungsi untuk inisialisasi Testimonial Slider
+function initTestimonialSlider() {
+    const testimonialSlider = new Swiper('#testimonial-slider', {
+        // Gunakan modul yang diimpor
+        modules: [Autoplay],
+
+        // Opsi Slider
+        loop: true, // Agar bisa berputar tak terbatas
+        speed: 800, // Kecepatan transisi slide
+        effect: 'slide', // Animasi geser (default)
+
+        // Opsi Autoplay
+        autoplay: {
+            delay: 5000, // Ganti slide setiap 5 detik
+            disableOnInteraction: false, // Tetap autoplay setelah interaksi user
+            pauseOnMouseEnter: true, // Jeda saat kursor di atas slider
+        },
+    });
+}
+
+// Fungsi untuk inisialisasi Logo Scroller
+function initLogoScroller() {
+    const scrollers = document.querySelectorAll(".scroller");
+
+    // Jika pengguna tidak suka animasi, hentikan
+    if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        scrollers.forEach((scroller) => {
+            scroller.setAttribute("data-animated", "true");
+
+            const scrollerInner = scroller.querySelector(".scroller__inner");
+            const scrollerContent = Array.from(scrollerInner.children);
+
+            scrollerContent.forEach(item => {
+                const duplicatedItem = item.cloneNode(true);
+                duplicatedItem.setAttribute("aria-hidden", true);
+                scrollerInner.appendChild(duplicatedItem);
+            });
+        });
+    }
+}
+
+// Inisialisasi semuanya saat halaman dimuat
+document.addEventListener('DOMContentLoaded', function() {
+    AOS.init({ once: true }); // 'once: true' adalah praktik yang baik
+
+    // Panggil inisialisasi animasi counter
+    initCounterAnimation();
+
+    initLogoScroller(); 
+
+    initTestimonialSlider();
 });
