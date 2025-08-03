@@ -12,7 +12,7 @@
                 <nav class="hidden md:flex items-center space-x-8 text-sm font-semibold tracking-wider">
                     <a href="#" class="text-green-400">HOME</a>
                     <a href="#" class="hover:text-green-400 transition-colors flex items-center">
-                        CITY BRANCHES
+                        Our Teams
                         <svg class="w-4 h-4 ml-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
                         </svg>
