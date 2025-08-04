@@ -28,7 +28,7 @@ class PageController extends Controller
                 'url' => '#',
             ],
             [
-                'image' => 'https://images.unsplash.com/photo-1579567761406-46248a3c03a4?q=80&w=2070&auto=format&fit=crop',
+                'image' => 'https://plus.unsplash.com/premium_photo-1705091308852-4711861c6c7d?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
                 'category' => 'Corporate',
                 'title' => 'Panduan Lengkap Mengadakan Acara Perusahaan Bersama Event Organizer Terbaik',
                 'date' => 'May 9, 2023',
@@ -67,8 +67,9 @@ public function home()
 
     // Data untuk Features/Services Section
     $features = [
+
         [
-            'image' => 'https://img.icons8.com/?size=100&id=381&format=png&color=16a34a',
+            'image' => 'images\services\music.png',
             'title' => 'Music Events',
             'description' => 'Pretium lectus quam id leo in vitae turpis. Mattis pellentesque id nibh tortor id.',
         ],
@@ -95,17 +96,17 @@ public function home()
     // Data untuk Portfolio Section
     $portfolioItems = [
         [
-            'image' => 'images/portfolio/portfolio-summit.jpg',
+            'image' => 'images\portofolio\portfolio-summit.jpg',
             'title' => 'Vertiv Co Ltd Singapore<br>Asia Channel Summit 2023',
             'client' => 'Vertiv Co Ltd', 'category' => 'International', 'venue' => 'Grand Hyatt, Bali', 'participants' => '500 Pax'
         ],
         [
-            'image' => 'https://images.unsplash.com/photo-1619545307432-9fc73f8135ff?q=80&w=464&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+            'image' => 'https://images.unsplash.com/photo-1472653431158-6364773b2a56?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
             'title' => 'KEMENPAREKRAF RI<br>Hari Ekonomi Kreatif Nasional',
             'client' => 'KEMENPAREKRAF RI', 'category' => 'Government', 'venue' => 'Gedung Sapta Pesona', 'participants' => '300 Pax'
         ],
         [
-            'image' => 'https://images.unsplash.com/photo-1585917170055-e40d30c73414?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+            'image' => 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
             'title' => 'MIRAE ASSET SEKURITAS<br>10 Years Anniversary',
             'client' => 'Mirae Asset Sekuritas', 'category' => 'Corporate', 'venue' => 'Aston Sentul', 'participants' => '550 Pax'
         ],
