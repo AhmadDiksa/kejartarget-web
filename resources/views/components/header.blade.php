@@ -17,12 +17,13 @@
                 HOME
             </a>
             
-            <a href="#" class="{{ request()->is('teams*') ? 'text-green-600' : 'text-gray-600' }} hover:text-green-600 transition-colors flex items-center">
-                OUR TEAMS
-                <svg class="w-4 h-4 ml-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-                   <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                </svg>
+            <a href="/teams" class="{{ request()->is('teams*') ? 'text-green-600' : 'text-gray-600' }} hover:text-green-600 transition-colors">
+                OUR TEAM
             </a>
+            
+            {{-- Menggunakan * untuk mencakup halaman services --}}
+            
+            {{-- Menggunakan * untuk mencakup halaman about --}}
 
             <a href="#" class="{{ request()->is('about') ? 'text-green-600' : 'text-gray-600' }} hover:text-green-600 transition-colors">
                 ABOUT

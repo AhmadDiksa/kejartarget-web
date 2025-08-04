@@ -144,5 +144,49 @@ public function home()
     return view('pages.home', compact(
         'hero', 'about', 'features', 'stats', 'portfolioItems', 'clients', 'testimonials'
     ));
+    
+}
+
+public function teams()
+{
+    // Data dummy untuk anggota tim dengan detail tambahan
+    $teamMembers = [
+        [
+            'image' => 'https://images.unsplash.com/photo-1568602471122-7832951cc4c5?q=80&w=870&auto=format&fit=crop',
+            'name' => 'Bob Brown',
+            'position' => 'Creative Leader',
+            'description' => 'Glavrida amet ritnisl libero molestie ante ut fringilla purus eros quis glavrid from dolor.',
+            'socials' => [
+                'facebook' => '#',
+                'twitter' => '#',
+                'instagram' => '#'
+            ]
+        ],
+        [
+            'image' => 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=870&auto=format&fit=crop',
+            'name' => 'Mary Smith',
+            'position' => 'Chief Accountant',
+            'description' => 'Glavrida amet ritnisl libero molestie ante ut fringilla purus eros quis glavrid from dolor.',
+            'socials' => [
+                'facebook' => '#',
+                'twitter' => '#',
+                'instagram' => '#'
+            ]
+        ],
+        [
+            'image' => 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=387&auto=format&fit=crop',
+            'name' => 'Nick Dark',
+            'position' => 'Sales Manager',
+            'description' => 'Glavrida amet ritnisl libero molestie ante ut fringilla purus eros quis glavrid from dolor.',
+            'socials' => [
+                'facebook' => '#',
+                'twitter' => '#',
+                'instagram' => '#'
+            ]
+        ],
+        // Tambahkan anggota lain di sini jika perlu
+    ];
+
+    return view('pages.teams', compact('teamMembers'));
 }
 }
