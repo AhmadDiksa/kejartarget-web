@@ -1,7 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PageController; // Pastikan ini diimpor
 
-Route::get('/', function () {
-    return view('pages.home');
-});
+// Route untuk halaman utama
+Route::get('/', [PageController::class, 'home'])->name('home');
+
+// Route untuk halaman blog
+Route::get('/blog', [PageController::class, 'blog'])->name('blog');
