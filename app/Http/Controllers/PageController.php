@@ -100,7 +100,7 @@ public function home()
             'client' => 'Vertiv Co Ltd', 'category' => 'International', 'venue' => 'Grand Hyatt, Bali', 'participants' => '500 Pax'
         ],
         [
-            'image' => 'images/portfolio/portfolio-kemenparekraf.jpg',
+            'image' => 'https://images.unsplash.com/photo-1619545307432-9fc73f8135ff?q=80&w=464&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
             'title' => 'KEMENPAREKRAF RI<br>Hari Ekonomi Kreatif Nasional',
             'client' => 'KEMENPAREKRAF RI', 'category' => 'Government', 'venue' => 'Gedung Sapta Pesona', 'participants' => '300 Pax'
         ],
