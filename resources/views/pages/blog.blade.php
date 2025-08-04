@@ -44,10 +44,12 @@
 
         </div>
 
-        {{-- Pagination (opsional, bisa ditambahkan nanti) --}}
-        {{-- <div class="mt-16 text-center">
-            ...
-        </div> --}}
+        {{-- Bagian Pagination --}}
+        <div class="mt-16">
+            {{-- Baris ini yang akan menampilkan link halaman 1, 2, 3, dst. --}}
+            {{ $posts->links() }}
+        </div>
+        
     </div>
 </section>
 

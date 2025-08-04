@@ -10,31 +10,17 @@
             <span class="text-2xl font-bold text-gray-800">KejarTarget</span>
         </a>
 
-        <!-- Navigation Links (Sekarang Dinamis) -->
+    <!-- Navigation Links (Sekarang Dinamis) -->
         <nav class="hidden md:flex items-center space-x-8 text-sm font-semibold tracking-wider">
             
-            <a href="/" class="{{ request()->is('/') ? 'text-green-600' : 'text-gray-600' }} hover:text-green-600 transition-colors">
-                HOME
-            </a>
-            
-            <a href="/teams" class="{{ request()->is('teams*') ? 'text-green-600' : 'text-gray-600' }} hover:text-green-600 transition-colors">
-                OUR TEAM
-            </a>
-            
-            {{-- Menggunakan * untuk mencakup halaman services --}}
-            
-            {{-- Menggunakan * untuk mencakup halaman about --}}
-
-            <a href="#" class="{{ request()->is('about') ? 'text-green-600' : 'text-gray-600' }} hover:text-green-600 transition-colors">
-                ABOUT
-            </a>
-            
-            {{-- Menggunakan * untuk mencakup halaman pagination blog --}}
-            <a href="/blog" class="{{ request()->is('blog*') ? 'text-green-600' : 'text-gray-600' }} hover:text-green-600 transition-colors">
-                BLOG
-            </a>
+            @foreach ($navLinks as $link)
+                <a href="{{ url($link['url']) }}" class="{{ request()->is($link['active_pattern']) ? 'text-green-600' : 'text-gray-600' }} hover:text-green-600 transition-colors">
+                    {{ $link['text'] }}
+                </a>
+            @endforeach
 
         </nav>
+
 
         <!-- Right Side: Search and Contact Button -->
         <div class="hidden md:flex items-center space-x-6">

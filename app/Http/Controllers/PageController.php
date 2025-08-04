@@ -3,20 +3,22 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Pagination\Paginator;
+use Illuminate\Support\Collection;
 
 class PageController extends Controller
 {
     // Method baru untuk halaman Blog
     public function blog()
     {
-        // Data dummy untuk postingan blog. Di aplikasi nyata, ini akan diambil dari database.
-        $posts = [
+        // Data dummy untuk semua postingan blog
+        $allPosts = new Collection([
             [
                 'image' => 'https://images.unsplash.com/photo-1605379399642-870262d3d051?q=80&w=2106&auto=format&fit=crop',
                 'category' => 'Launching Event',
                 'title' => 'Event Organizer Jakarta Terbaik Spesialis Expo, Summit, dan Launching Event',
                 'date' => 'May 9, 2023',
-                'excerpt' => 'Dalam dunia bisnis yang semakin kompetitif, kebutuhan akan penyelenggaraan event profesional seperti expo, summit, dan launching event menjadi sangat penting...',
+                'excerpt' => 'Dalam dunia bisnis yang semakin kompetitif, kebutuhan akan penyelenggaraan event profesional menjadi sangat penting...',
                 'url' => '#',
             ],
             [
@@ -24,18 +26,52 @@ class PageController extends Controller
                 'category' => 'Corporate',
                 'title' => 'EO Jakarta Terbaik untuk Corporate Gathering, Seminar, dan Gala Dinner',
                 'date' => 'May 9, 2023',
-                'excerpt' => 'Merencanakan acara perusahaan seperti corporate gathering, seminar, atau gala dinner bukanlah hal yang mudah. Dibutuhkan pengalaman, kreativitas, dan perhatian terhadap...',
+                'excerpt' => 'Merencanakan acara perusahaan seperti corporate gathering bukanlah hal yang mudah. Dibutuhkan pengalaman, kreativitas...',
                 'url' => '#',
             ],
             [
-                'image' => 'https://plus.unsplash.com/premium_photo-1705091308852-4711861c6c7d?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+                'image' => 'https://plus.unsplash.com/premium_photo-1661310129193-81b6637a0e40?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
                 'category' => 'Corporate',
-                'title' => 'Panduan Lengkap Mengadakan Acara Perusahaan Bersama Event Organizer Terbaik',
-                'date' => 'May 9, 2023',
-                'excerpt' => 'Mengadakan acara perusahaan bukanlah perkara mudah. Dibutuhkan perencanaan matang, koordinasi yang rapi, serta eksekusi yang sempurna agar acara dapat berjalan...',
+                'title' => 'Panduan Lengkap Mengadakan Acara Perusahaan Bersama EO Terbaik',
+                'date' => 'May 8, 2023',
+                'excerpt' => 'Mengadakan acara perusahaan bukanlah perkara mudah. Dibutuhkan perencanaan matang, koordinasi yang rapi, serta eksekusi...',
                 'url' => '#',
             ],
-        ];
+            [
+                'image' => 'https://images.unsplash.com/photo-1511578191439-44c181658428?q=80&w=2070&auto=format&fit=crop',
+                'category' => 'Tips & Trik',
+                'title' => '5 Tips Memilih Vendor Dekorasi untuk Event Anda',
+                'date' => 'May 7, 2023',
+                'excerpt' => 'Dekorasi adalah salah satu elemen kunci yang menentukan suasana sebuah acara. Memilih vendor yang tepat adalah langkah vital...',
+                'url' => '#',
+            ],
+            [
+                'image' => 'https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop',
+                'category' => 'Team Building',
+                'title' => 'Ide Aktivitas Team Building Outdoor yang Seru dan Bermanfaat',
+                'date' => 'May 6, 2023',
+                'excerpt' => 'Meningkatkan kekompakan tim tidak harus dilakukan di dalam ruangan. Aktivitas outdoor bisa menjadi pilihan yang menyegarkan...',
+                'url' => '#',
+            ],
+            [
+                'image' => 'https://images.unsplash.com/photo-1560523159-4a9692c202f5?q=80&w=2070&auto=format&fit=crop',
+                'category' => 'MICE',
+                'title' => 'Tren Terkini dalam Industri MICE (Meetings, Incentives, Conferences, Exhibitions)',
+                'date' => 'May 5, 2023',
+                'excerpt' => 'Industri MICE terus berkembang dengan berbagai inovasi teknologi dan tren baru. Simak apa saja yang sedang populer saat ini...',
+                'url' => '#',
+            ],
+        ]);
+
+        // Konfigurasi Paginator secara manual
+        $perPage = 3; // Menampilkan 3 post per halaman
+        $currentPage = Paginator::resolveCurrentPage('page');
+        $currentPageItems = $allPosts->slice(($currentPage - 1) * $perPage, $perPage);
+        
+        $posts = new Paginator($currentPageItems, $perPage, $currentPage, [
+            'path' => Paginator::resolveCurrentPath(),
+            'pageName' => 'page',
+        ]);
 
         return view('pages.blog', [
             'posts' => $posts
@@ -124,17 +160,17 @@ public function home()
     // Data untuk Testimonial Section
     $testimonials = [
         [
-            'image' => 'images/testimonials/client-yudha.jpg',
+            'image' => 'images\testimonials\client1.jpg',
             'quote' => "This Year, Future Leader fest is becoming an icon for leadership coaching for youth. And we're glad this event is fully supported by KejarTarget. Good Job KejarTarget!",
             'name' => 'Stanno Yudha Putra', 'title' => 'Chairman of Future Leader Fest 2023'
         ],
         [
-            'image' => 'images/testimonials/client-siti.jpg',
+            'image' => 'https://images.unsplash.com/photo-1619545307432-9fc73f8135ff?q=80&w=464&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
             'quote' => 'Kerja sama dengan KejarTarget adalah keputusan terbaik. Tim mereka sangat responsif, kreatif, dan profesional. Acara berjalan lancar melebihi ekspektasi.',
             'name' => 'Siti Aisyah', 'title' => 'Marketing Director, TechCorp'
         ],
         [
-            'image' => 'images/testimonials/client-budi.jpg',
+            'image' => 'https://images.unsplash.com/photo-1585917170055-e40d30c73414?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
             'quote' => 'Dari konsep hingga eksekusi, semuanya ditangani dengan sangat baik. Tim KejarTarget memastikan kami tidak perlu khawatir tentang apa pun. Luar biasa!',
             'name' => 'Budi Hartono', 'title' => 'Founder, Startup Maju'
         ],

@@ -1,10 +1,15 @@
-{{-- resources/views/components/blog-card.blade.php --}}
+
 @props(['image', 'category', 'title', 'date', 'excerpt', 'url'])
 
-<div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col h-full">
-    <div class="relative">
+<div class="group bg-white rounded-lg shadow-lg overflow-hidden flex flex-col h-full transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-2">
+    <div class="relative overflow-hidden"> {{-- Tambahkan overflow-hidden di sini --}}
         <a href="{{ $url }}">
-            <img class="w-full h-56 object-cover" src="{{ $image }}" alt="{{ $title }}">
+            {{-- 
+              PERUBAHAN DI SINI:
+              - transition-transform: Menganimasikan perubahan ukuran (scale).
+              - group-hover:scale-105: Memperbesar gambar 5% saat parent (group) di-hover.
+            --}}
+            <img class="w-full h-56 object-cover transition-transform duration-300 group-hover:scale-105" src="{{ $image }}" alt="{{ $title }}">
         </a>
         <a href="#" class="absolute bottom-4 left-4 bg-green-600 text-white text-xs font-semibold px-3 py-1 rounded hover:bg-green-700 transition-colors">
             {{ $category }}
