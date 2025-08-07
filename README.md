@@ -1,4 +1,4 @@
-# KejarTarget Web Frontend  
+# KejarTarget Web
 > **Your Event Partner** – Modern, responsive landing site for KejarTarget, built with Laravel, Tailwind CSS & Vite.
 
 ---
