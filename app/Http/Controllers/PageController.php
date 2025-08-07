@@ -78,7 +78,6 @@ class PageController extends Controller
         ]);
     }
 
-   // app/Http/Controllers/PageController.php
 
 public function home()
 {
