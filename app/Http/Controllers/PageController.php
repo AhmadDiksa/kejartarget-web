@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -153,7 +152,6 @@ public function home()
         ['logo' => 'images/clients/logo-kemenparekraf.png', 'name' => 'Kemenparekraf'],
         ['logo' => 'images/clients/microsoft.jpg', 'name' => 'Microsoft'],
         ['logo' => 'images/clients/unesa.png', 'name' => 'Unesa'],
-        // Tambahkan logo lain di sini jika perlu
     ];
     
     // Data untuk Testimonial Section
@@ -219,7 +217,6 @@ public function teams()
                 'instagram' => '#'
             ]
         ],
-        // Tambahkan anggota lain di sini jika perlu
     ];
 
     return view('pages.teams', compact('teamMembers'));
