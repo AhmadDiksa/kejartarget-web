@@ -146,7 +146,7 @@ public function home()
         ],
     ];
 
-    // Data untuk Client/Logo Scroller
+    // Data untuk Client/Mitra Scroller
     $clients = [
         ['logo' => 'images/clients/gdg.png', 'name' => 'GDG'],
         ['logo' => 'images/clients/logo-kemenparekraf.png', 'name' => 'Kemenparekraf'],
