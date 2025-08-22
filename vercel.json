@@ -44,5 +44,10 @@
     "env": {
       "VITE_APP_URL": "https://your-domain.vercel.app"
     }
+  },
+  "functions": {
+    "api/index.php": {
+      "runtime": "vercel-php@0.6.0"
+    }
   }
 }
