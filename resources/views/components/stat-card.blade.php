@@ -9,7 +9,6 @@
     
     <!-- Angka Statistik -->
     <div class="text-4xl lg:text-5xl font-bold text-white mb-2">
-        {{-- Suffix statis di luar span telah dihapus untuk memperbaiki bug duplikasi --}}
         <span class="animated-counter" data-target="{{ $target }}" data-suffix="{{ $suffix }}">0</span>
     </div>
 

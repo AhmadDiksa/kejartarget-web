@@ -122,7 +122,6 @@ public function home()
     // Data untuk Statistics Section
     $stats = [
         ['iconUrl' => 'https://img.icons8.com/?size=100&id=25391&format=png&color=16a34a', 'target' => 125, 'suffix' => ' +', 'label' => 'Projects Done'],
-        ['iconUrl' => 'https://img.icons8.com/?size=100&id=25565&format=png&color=16a34a', 'target' => 1500, 'suffix' => ' +', 'label' => 'Customer Happy'],
         ['iconUrl' => 'https://img.icons8.com/?size=100&id=1136&format=png&color=16a34a', 'target' => 100, 'suffix' => ' %', 'label' => 'Satisfactory Rate'],
         ['iconUrl' => 'https://img.icons8.com/?size=100&id=40390&format=png&color=16a34a', 'target' => 99, 'label' => 'Team Experts'],
     ];

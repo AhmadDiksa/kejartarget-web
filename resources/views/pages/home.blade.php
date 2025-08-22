@@ -17,10 +17,10 @@
         </p>
         <div data-aos="fade-up" data-aos-delay="400" class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-6">
             <a href="#" class="w-full sm:w-auto bg-green-500 text-white px-8 py-3 rounded-md font-semibold hover:bg-green-600 transition-colors">FREE EVENT CONSULTATION</a>
-            <a href="#" class="w-full sm:w-auto flex items-center justify-center gap-3 font-semibold hover:text-green-400 transition-colors">
+            <!-- <a href="#" class="w-full sm:w-auto flex items-center justify-center gap-3 font-semibold hover:text-green-400 transition-colors">
                 <svg class="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15.91 11.672a.375.375 0 010 .656l-5.603 3.113a.375.375 0 01-.557-.328V8.887c0-.286.307-.466.557-.327l5.603 3.112z" /></svg>
                 <span>WATCH INTRO</span>
-            </a>
+            </a> -->
         </div>
     </div>
 </section>
@@ -28,7 +28,7 @@
 
 <!-- WhatsApp Button -->
 <a href="https://wa.me/6281234567890?text=Halo%20KejarTarget" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 bg-green-500 w-16 h-16 rounded-full flex items-center justify-center shadow-lg hover:bg-green-600 transition-colors z-20">
-    <img src="{{ asset('images/whatsapp-logo.png') }}" alt="Hubungi via WhatsApp" class="w-9 h-9">
+    <img src="{{ asset('images/book.png') }}" alt="Lihat Katalog" class="w-6 h-6">
 </a>
 
 {{-- About Us Section Start --}}
@@ -98,10 +98,10 @@
 
 {{-- Statistics Section Start --}}
 <section id="statistics" class="py-20 bg-gradient-to-r from-gray-900 via-green to-black">
-    <div class="container mx-auto px-6">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+    <div class="container mx-auto px-6 justify-center items-center">
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
             @foreach ($stats as $stat)
-            <div data-aos="fade-up" data-aos-delay="{{ $loop->index * 150 }}">
+            <div class="flex flex-col items-center justify-center" data-aos="fade-up" data-aos-delay="{{ $loop->index * 150 }}">
                 <x-stat-card 
                     :iconUrl="$stat['iconUrl']"
                     :target="$stat['target']" 

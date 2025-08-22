@@ -20,6 +20,7 @@ class AppServiceProvider extends ServiceProvider
             ['url' => '/', 'text' => 'HOME', 'active_pattern' => '/'],
             ['url' => '/teams', 'text' => 'OUR TEAM', 'active_pattern' => 'teams*'],
             ['url' => '#about-us', 'text' => 'ABOUT', 'active_pattern' => 'about-us'],
+            ['url' => '#services', 'text' => 'FEATURES', 'active_pattern' => 'features'],
             ['url' => '/blog', 'text' => 'BLOG', 'active_pattern' => 'blog*'],
         ];
 
